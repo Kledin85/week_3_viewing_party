@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get '/users/:user_id/movies/:id', to: 'movies#show', as: 'movie'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
-  resources :users, only: :show
+  get '/logout', to: 'users#logout_user'
+  get '/dashboard', to: 'users#show'
+  # resources :users, only: :show
 end

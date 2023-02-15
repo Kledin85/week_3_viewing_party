@@ -1,5 +1,7 @@
-<h2><%= @user.name %>'s Dashboard</h2>
-
-<%= button_to "Find Top Rated Movies", movies_path(@user), method: :get %><br>
-
-<h3>Viewing Parties:</h3>
+<% if current_user %>
+  <h2><%= @user.name %>'s Dashboard</h2>
+  <%= button_to "Find Top Rated Movies", movies_path(@user), method: :get %><br>
+  <h3>Viewing Parties:</h3>
+<% else %>
+  <%= "Must be a registered or logged in user" %>
+<% end %>
